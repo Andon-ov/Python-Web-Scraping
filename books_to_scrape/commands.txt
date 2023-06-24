@@ -1,0 +1,8 @@
+scrapy startproject books_to_scrape
+scrapy genspider bookspider books.toscrape.com
+scrapy shell books.toscrape.com
+scrapy crawl bookspider -O book.json
+scrapy crawl bookspider -O book.json
+scrapy shell
+scrapy crawl bookspider -O book_more_info.json
+

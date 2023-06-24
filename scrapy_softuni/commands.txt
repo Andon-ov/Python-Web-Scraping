@@ -1,0 +1,14 @@
+pip install scrapy
+scrapy version
+scrapy startproject softuni
+code softuni
+touch commands.txt
+scrapy shell softuni.bg/trainers
+
+
+cd softuni
+scrapy crawl names -O names_data.json
+scrapy crawl trainers -O trainers_data.json
+scrapy crawl courses -O courses_data.json
+
+
