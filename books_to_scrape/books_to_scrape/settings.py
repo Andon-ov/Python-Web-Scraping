@@ -13,6 +13,12 @@ SPIDER_MODULES = ["books_to_scrape.spiders"]
 NEWSPIDER_MODULE = "books_to_scrape.spiders"
 
 
+# Scrapy will automatically store the scraped data in the 'booksdata.json' file in JSON format. 
+# You can modify the file name or format as needed by changing the values in the FEEDS dictionary.
+FEEDS = {
+    'booksdata.json': {'format': 'json'}
+}
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "books_to_scrape (+http://www.yourdomain.com)"
 
@@ -62,9 +68,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "books_to_scrape.pipelines.BooksToScrapePipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "books_to_scrape.pipelines.BooksToScrapePipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +97,12 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+
+# # MySQL connection settings
+# MYSQL_HOST = 'localhost'  # Replace with your MySQL container IP or hostname
+# MYSQL_PORT = 3306  # Replace with your MySQL container port
+# MYSQL_DATABASE = 'your_database'  # Replace with your MySQL database name
+# MYSQL_USER = 'your_user'  # Replace with your MySQL username
+# MYSQL_PASSWORD = 'my-secret-pw'  # Replace with your MySQL password
