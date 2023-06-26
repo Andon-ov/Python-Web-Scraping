@@ -35,11 +35,11 @@ class BookspiderSpider(scrapy.Spider):
     allowed_domains = ['books.toscrape.com']
     start_urls = ['https://books.toscrape.com/']
 
-    custom_settings = {
-        'FEEDS': {
-            'data.csv': {'format': 'csv', }
-        }
-    }
+    # custom_settings = {
+    #     'FEEDS': {
+    #         'data.csv': {'format': 'csv', }
+    #     }
+    # }
 
     def parse(self, response):
         books = response.css('article.product_pod')
