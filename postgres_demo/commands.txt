@@ -1,0 +1,18 @@
+scrapy startproject postgres_demo
+scrapy genspider quotes quotes.toscrape.com
+cd postgres_demo
+scrapy genspider quotesspider quotes.toscrape.com
+code .
+  
+ 
+ create database:
+ psql -U postgres -h localhost
+ 	write password: mysecretpassword
+ 	
+ create base:
+ 
+ CREATE DATABASE quotes
+ 
+ exit:
+  \q
+

@@ -1,4 +1,4 @@
-# Scrapy settings for books_to_scrape_in_db project
+# Scrapy settings for postgres_demo project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "books_to_scrape_in_db"
+BOT_NAME = "postgres_demo"
 
-SPIDER_MODULES = ["books_to_scrape_in_db.spiders"]
-NEWSPIDER_MODULE = "books_to_scrape_in_db.spiders"
+SPIDER_MODULES = ["postgres_demo.spiders"]
+NEWSPIDER_MODULE = "postgres_demo.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "books_to_scrape_in_db (+http://www.yourdomain.com)"
+#USER_AGENT = "postgres_demo (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "books_to_scrape_in_db.middlewares.BooksToScrapeInDbSpiderMiddleware": 543,
+#    "postgres_demo.middlewares.PostgresDemoSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "books_to_scrape_in_db.middlewares.BooksToScrapeInDbDownloaderMiddleware": 543,
+#    "postgres_demo.middlewares.PostgresDemoDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "books_to_scrape_in_db.pipelines.BooksToScrapeInDbPipeline": 300,
+#    "postgres_demo.pipelines.PostgresDemoPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -91,3 +91,11 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+# settings.py
+
+ITEM_PIPELINES = {
+   'postgres_demo.pipelines.PostgresDemoPipeline': 300,
+}
+
