@@ -4,6 +4,14 @@ cd postgres_demo
 scrapy genspider quotesspider quotes.toscrape.com
 code .
   
+ docker:
+ docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+ 
+ hostname = 'localhost'
+ username = 'postgres' 
+ password = 'mysecretpassword' # your password
+ database = 'quotes'
+ 
  
  create database:
  psql -U postgres -h localhost
@@ -15,4 +23,7 @@ code .
  
  exit:
   \q
+
+
+scrapy crawl quotes
 
