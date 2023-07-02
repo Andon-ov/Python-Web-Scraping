@@ -2,7 +2,14 @@ scrapy startproject books_to_scrape
 scrapy genspider bookspider books.toscrape.com
 scrapy shell books.toscrape.com
 scrapy crawl bookspider -O book.json
-scrapy crawl bookspider -O book.json
-scrapy shell
 scrapy crawl bookspider -O book_more_info.json
 
+sudo docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+connect to db and create "quotes"
+
+pip install --upgrade cssselect
+pip install parsel
+pip install psycopg2-binary
+
+pip freeze > requirements.txt
+scrapy crawl bookspider
