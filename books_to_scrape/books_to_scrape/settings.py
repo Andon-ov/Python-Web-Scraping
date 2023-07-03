@@ -13,6 +13,9 @@ SPIDER_MODULES = ["books_to_scrape.spiders"]
 NEWSPIDER_MODULE = "books_to_scrape.spiders"
 
 
+# USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+
+
 # Scrapy will automatically store the scraped data in the 'booksdata.json' file in JSON format.
 # You can modify the file name or format as needed by changing the values in the FEEDS dictionary.
 # FEEDS = {
